@@ -28,3 +28,10 @@ body {
 #character {
   height: 70px;
 }
+
+.obstacle {
+  position: absolute;
+  height: 70px;
+  width: 35px;
+  background-color: red;
+}
