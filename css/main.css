@@ -14,8 +14,17 @@ body {
 }
 
 #board {
-  position: absolute;
+  position: relative;
   width: 90%;
   height: 90%;
   background-color: floralwhite;
+}
+
+#player {
+  position: absolute;
+  bottom: 0;
+}
+
+#character {
+  height: 70px;
 }

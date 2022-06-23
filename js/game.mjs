@@ -13,11 +13,9 @@ export default class Game {
       switch (e.key) {
         case 'ArrowLeft':
           this.player.moveLeft()
-          console.log(this.player.positionX)
           break
         case 'ArrowRight':
           this.player.moveRight()
-          console.log(this.player.positionX)
           break
       }
     })
