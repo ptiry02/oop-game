@@ -1,7 +1,9 @@
 export default class Obstacle {
   constructor() {
     this.positionX = this.setRandom()
-    this.positionY = 0
+    this.positionY = 90
+    this.height = 20
+    this.width = 5
 
     this.domElement = this.createDomElement()
   }
@@ -16,7 +18,9 @@ export default class Obstacle {
     // set id and css
     newElm.className = 'obstacle'
     newElm.style.left = `${this.positionX}vw`
-    newElm.style.top = `${this.positionY}px`
+    newElm.style.bottom = `${this.positionY}vh`
+    newElm.style.width = `${this.width}vw`
+    newElm.style.height = `${this.height}vh`
 
     // append to the dom
     const boardElm = document.getElementById('board')
@@ -25,7 +29,7 @@ export default class Obstacle {
     return newElm
   }
   moveDown() {
-    this.positionY++
-    this.domElement.style.top = this.positionY + 'vh'
+    this.positionY--
+    this.domElement.style.bottom = `${this.positionY}vh`
   }
 }

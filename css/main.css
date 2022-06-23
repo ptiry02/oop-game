@@ -6,11 +6,12 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: lightsteelblue;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #board {
@@ -22,16 +23,15 @@ body {
 
 #player {
   position: absolute;
-  bottom: 0;
-}
-
-#character {
-  height: 70px;
 }
 
 .obstacle {
   position: absolute;
-  height: 70px;
-  width: 35px;
   background-color: red;
+}
+
+#pause {
+  margin-top: 25px;
+  width: 50px;
+  height: 25px;
 }

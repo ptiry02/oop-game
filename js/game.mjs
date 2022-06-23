@@ -12,14 +12,27 @@ export default class Game {
     this.addEventListeners()
 
     setInterval(() => {
-      this.obstacleArr.forEach((ob) => {
-        ob.moveDown()
-      })
       if (this.time % 60 === 0) {
         this.obstacleArr.push(new Obstacle())
       }
+      this.obstacleArr.forEach((ob) => {
+        ob.moveDown()
+        if (
+          this.player.positionX < ob.positionX + ob.width &&
+          this.player.positionX + this.player.width > ob.positionX &&
+          this.player.positionY < ob.positionY + ob.height &&
+          this.player.height + this.player.positionY > ob.positionY
+        ) {
+          //collision detected !!
+          console.log('collision detected !!')
+        }
+      })
       this.time++
     }, 50)
+    const button = document.getElementById('pause')
+    button.addEventListener('click', () => {
+      clearInterval(interval)
+    })
   }
   addEventListeners() {
     document.addEventListener('keydown', (e) => {
