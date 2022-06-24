@@ -23,8 +23,11 @@ export default class Game {
           this.player.positionY < ob.positionY + ob.height &&
           this.player.height + this.player.positionY > ob.positionY
         ) {
-          //collision detected !!
           console.log('collision detected !!')
+        }
+        if (ob.positionY + ob.height === 0) {
+          this.obstacleArr.shift()
+          ob.domElement.remove()
         }
       })
       this.time++

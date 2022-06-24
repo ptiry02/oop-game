@@ -3,19 +3,14 @@ export default class Player {
     this.positionX = 40
     this.positionY = 0
     this.height = this.calcHeight()
-    this.width = this.calcWidth()
+    this.width = 10
     this.playerContainer = this.createPlayer()
     this.image = this.createImage(this.playerContainer)
   }
-  calcWidth() {
-    const result1 = 20 * (1024 / 713)
-    const result2 = (window.innerHeight * result1) / window.innerWidth
-    return result2
-  }
   calcHeight() {
     const result1 = 713 / 1024
-    const result2 = (this.calcWidth() * result1) / window.innerHeight
-    return result2 * 1400
+    const result2 = (0.1 * window.innerWidth * result1) / window.innerHeight
+    return result2 * 100
   }
   createPlayer() {
     const domPlayer = document.createElement('div')
@@ -25,7 +20,8 @@ export default class Player {
     domPlayer.style.height = `${this.height}vh`
     domPlayer.style.width = `${this.width}vw`
 
-    console.log(this.height)
+    console.log('height: ', this.height)
+    console.log('width: ', this.width)
 
     const boardElm = document.getElementById('board')
     boardElm.appendChild(domPlayer)
